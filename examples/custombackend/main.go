@@ -13,6 +13,9 @@ func NewMyStack(scope constructs.Construct, id string) cdktf.TerraformStack {
 
 	bucket := s3bucket.NewS3Bucket(stack, jsii.String("example-s3"), &s3bucket.S3BucketConfig{
 		Bucket: jsii.String("ntcdktest"),
+		Tags: &map[string]*string{
+			"SomeChangedTag": jsii.String("SomeChangedValue"),
+		},
 	})
 
 	cdktf.NewTerraformOutput(stack, jsii.String("bucket_name"), &cdktf.TerraformOutputConfig{
