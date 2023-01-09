@@ -3,7 +3,7 @@ name: CDKTF Deploy
 on:
   push:
     branches:
-      - add-custombackend-and-cicdpreview
+      - main
 
 jobs:
   deploy:
